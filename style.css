@@ -24,3 +24,46 @@ h1 {
   margin-top: 0;
 }
 
+#status {
+  display: inline;
+}
+
+#server-response {
+  margin-top: 1rem;
+}
+
+.margin {
+  margin-right: 1rem
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #111;
+  border-radius: 3px;
+  min-height: 20%;
+  background: transparent;
+}
+
+button {
+  border: 1px solid #111;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  color: #111;
+  background: transparent;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}                                            
+
+button[type='submit'] {
+  color: #ff4500;
+  font-weight: 400;
+}
+
+button:hover {
+  background-color: #111;
+  color: #fffaf0;
+}
+
