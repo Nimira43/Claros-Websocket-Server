@@ -34,5 +34,11 @@ openWsBtn.addEventListener('click', () => {
       default:
         socketStatus.innerHTML = `You have disconnected`
     }
+    form.classList.remove('show')
+    message.setAttribute('required', 'true')
+    openWsBtn.disabled = false
+    openWsBtn.style.background = ''
+    openWsBtn.style.background.pointerEvents = ''
+    openWsBtn.textContent = 'Open Websocket'
   }
 })
