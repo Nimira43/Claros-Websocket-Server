@@ -16,17 +16,25 @@ openWsBtn.addEventListener('click', () => {
   let socket = new WebSocket(url)
 
   socket.onopen = (openEvent) => {
+
+    console.log("SOCKET CONNECTING STATUS IS: " + socket.readyState)
+
     table.innerHTML = ''
+
+    console.log("SOCKET CONNECTING STATUS IS: " + socket.readyState)
+
     socketStatus.innerHTML = `Connected to: ${openEvent.currentTarget,url}`
     socketStatus.className = 'open'
     form.className = 'show'
   }
 
   socket.onmessage = function(message) {
-    // to be written
+    
   }
 
   socket.onclose = (closeEventObject) => {
+    console.log("CLOSE EVENT FIRED. CLOSE OBJECT", closeEventObject);
+
     socketStatus.className = 'closed'
     table.innerHTML = ''
     switch (closeEventObject.code) {
