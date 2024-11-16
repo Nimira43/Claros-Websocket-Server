@@ -2,7 +2,7 @@ let openWsBtn = document.getElementById('open-ws')
 let closeWsBtn = document.getElementById('close-ws')
 let form = document.getElementById('form')
 let socketStatus = document.getElementById('status')
-let table = document.getElementById('ul')[0]
+let table = document.getElementByTagName('ul')[0]
 let message = document.getElementById('message')
 
 openWsBtn.addEventListener('click', () => {
@@ -17,6 +17,7 @@ openWsBtn.addEventListener('click', () => {
 
   socket.onopen = (openEvent) => {
     table.innerHTML = ''
+    socketStatus.innerHTML = `Connected to: ${openEvent.currentTarget,url}`
     socketStatus.className = 'open'
     form.className = 'show'
   }
@@ -31,6 +32,7 @@ openWsBtn.addEventListener('click', () => {
     switch (closeEventObject.code) {
       case 1006: // network issue
         socketStatus.innerHTML = 'Issue with Websocket Connection'
+        break
       case 1001: // peer closes connection
         socketStatus.innerHTML = `Disconnected: ${closeEventObject.reason}`
         table.innerHTML = ''
@@ -42,11 +44,12 @@ openWsBtn.addEventListener('click', () => {
     message.setAttribute('required', 'true')
     openWsBtn.disabled = false
     openWsBtn.style.background = ''
-    openWsBtn.style.background.pointerEvents = ''
+    openWsBtn.style.pointerEvents = ''
     openWsBtn.textContent = 'Open Websocket'
   }
 
   socket.onerror = (error) => {
+    console.log(error)
     socketStatus.innerHTML = 'Error'
     socketStatus.className = 'closed'
   }

@@ -68,9 +68,9 @@ button:hover {
   color: #fffaf0;
 }
 
-/* #form {
+#form {
   display: none;
-} */
+}
 
 #form.show {
   display: inline;
