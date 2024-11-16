@@ -45,4 +45,9 @@ openWsBtn.addEventListener('click', () => {
     openWsBtn.style.background.pointerEvents = ''
     openWsBtn.textContent = 'Open Websocket'
   }
+
+  socket.onerror = (error) => {
+    socketStatus.innerHTML = 'Error'
+    socketStatus.className = 'closed'
+  }
 })
