@@ -61,4 +61,11 @@ openWsBtn.addEventListener('click', () => {
       message.value = ''
     }
   })
+  closeWsBtn.addEventListener('click', () => {
+    socketStatus.innerHTML = 'Closing... Please Wait...'
+    socketStatus.classList.add('closing')
+    socket.close(1000, 'Terminated')
+    message.removeAttribute('required')
+    form.classList.remove('show')
+  })
 })
