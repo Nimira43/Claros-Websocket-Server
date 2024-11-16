@@ -109,3 +109,5 @@ Efficiency: Reduces the overhead associated with HTTP polling and long-polling t
 
 ###### Example Use Case
 Imagine a live chat application where messages need to be sent and received in real-time without refreshing the page. WebSockets, as defined in RFC 6455, make this possible by maintaining an open connection between the client and server.
+
+Link: https://www.rfc-editor.org/rfc/rfc6455
