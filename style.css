@@ -78,7 +78,7 @@ button:hover {
 
 .open {
   color: #1dd31d;
-  font-weight: 400;
+  font-weight: 400;\
 }
 
 .closed {

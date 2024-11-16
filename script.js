@@ -20,4 +20,19 @@ openWsBtn.addEventListener('click', () => {
     socketStatus.className = 'open'
     form.className = 'show'
   }
+
+  socket.onclose = (closeEventObject) => {
+    socketStatus.className = 'closed'
+    table.innerHTML = ''
+    switch (closeEventObject.code) {
+      case 1006: // network issue
+        socketStatus.innerHTML = 'Issue with Websocket Connection'
+      case 1001: // peer closes connection
+        socketStatus.innerHTML = `Disconnected: ${closeEventObject.reason}`
+        table.innerHTML = ''
+        break
+      default:
+        socketStatus.innerHTML = `You have disconnected`
+    }
+  }
 })
