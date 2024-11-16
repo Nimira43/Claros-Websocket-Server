@@ -10,5 +10,14 @@ openWsBtn.addEventListener('click', () => {
   openWsBtn.style.background = 'gray'
   openWsBtn.style.pointerEvents = 'none'
   openWsBtn.textContent = 'Button Disabled'
+  
+  socketStatus.innerHTML = 'Connecting...'
+  let url = 'ws://127.0.0.1:8080'
+  let socket = new WebSocket(url)
 
+  socket.onopen = (openEvent) => {
+    table.innerHTML = ''
+    socketStatus.className = 'open'
+    form.className = 'show'
+  }
 })
