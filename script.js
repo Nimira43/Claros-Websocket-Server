@@ -50,4 +50,15 @@ openWsBtn.addEventListener('click', () => {
     socketStatus.innerHTML = 'Error'
     socketStatus.className = 'closed'
   }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    if (socket.readyState === 1) {
+      let userText = message.value
+      socket.send(userText)
+      table.innerHTML += '<li class="sent"><span>SENT:</span>' + userText + '</li>'
+      message.value = ''
+    }
+  })
 })
