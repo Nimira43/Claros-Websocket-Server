@@ -21,6 +21,10 @@ openWsBtn.addEventListener('click', () => {
     form.className = 'show'
   }
 
+  socket.onmessage = function(message) {
+    // to be written
+  }
+
   socket.onclose = (closeEventObject) => {
     socketStatus.className = 'closed'
     table.innerHTML = ''
