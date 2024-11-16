@@ -45,7 +45,8 @@ textarea {
   background: transparent;
 }
 
-button {
+button,
+button#medium-sized-message {
   border: 1px solid #111;
   padding: 0.5rem 0.9rem;
   font-size: 0.9rem;
@@ -67,3 +68,53 @@ button:hover {
   color: #fffaf0;
 }
 
+#form {
+  display: none;
+}
+
+#form.show {
+  display: inline;
+}
+
+.open {
+  color: #1dd31d;
+  font-weight: 400;
+}
+
+.closed {
+  color: #d81f1f;
+  font-weight: 400;
+}
+
+.closing {
+  color: #e2d80c;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+ul li {
+  padding: 0.5rem 1rem;
+  overflow-wrap: break-word;
+}
+
+ul li span {
+  display: inline-block;
+  width: 20%;
+  font-weight: 400;
+  color: #bbb;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.sent {
+  background-color: #eee;
+}
+
+button#medium-sized-message {
+  float: right;
+}
