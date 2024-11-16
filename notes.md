@@ -78,3 +78,34 @@ Example: ~a results in a binary number where all 0s are turned to 1s and vice ve
 Used to shift bits left or right.
 
 Example: a << 2 shifts all bits in a two positions to the left, filling the rightmost positions with zeros.
+
+###### Practical Applications:
+Network Protocols: Parsing headers of network packets.
+File Formats: Reading and writing binary file formats.
+Cryptography: Implementing encryption and decryption algorithms.
+
+## Websocket Protocol - RFC 6455
+
+###### What is RFC 6455?
+RFC 6455: Stands for "Request for Comments 6455." It’s a formal document published by the Internet Engineering Task Force (IETF) that standardizes the WebSocket Protocol.
+
+Purpose: It outlines how WebSockets enable full-duplex communication channels over a single TCP connection, allowing real-time data exchange between clients and servers.
+
+###### Key Points of RFC 6455:
+Opening Handshake: The protocol starts with an HTTP handshake to establish the connection. This handshake upgrades the connection from HTTP to WebSocket2.
+
+Message Framing: Once the connection is established, data is exchanged in frames, which can be text or binary.
+
+Security: WebSockets can be secured using TLS (similar to HTTPS), resulting in wss:// URLs.
+
+Compatibility: Designed to work over the same ports as HTTP (80) and HTTPS (443), making it compatible with existing web infrastructure.
+
+Origin-Based Security: Ensures that only trusted clients can establish WebSocket connections.
+
+###### Why is it Important?
+Real-Time Communication: Enables applications like chat apps, live notifications, and online gaming to function smoothly by providing a low-latency communication channel.
+
+Efficiency: Reduces the overhead associated with HTTP polling and long-polling techniques.
+
+###### Example Use Case
+Imagine a live chat application where messages need to be sent and received in real-time without refreshing the page. WebSockets, as defined in RFC 6455, make this possible by maintaining an open connection between the client and server.
