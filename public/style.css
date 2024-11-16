@@ -5,6 +5,8 @@
   outline: none;
   text-decoration: none;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -35,6 +37,9 @@
   --h6-size: 1rem; 
   --p-size: 1rem;
   --line-height: 1.5rem;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  --transition: all 0.3 ease-in; 
 }
 
 body {
@@ -43,24 +48,7 @@ body {
   background-color: var(--light-2);
   color: var(--grey-dk);
   line-height: var(--line-height);
-  margin: 0;
-  padding: 0;
 } 
-
-a {
-  text-decoration: none;
-}
-
-hr {
-  color: var(--light-2);
-}
-
-.logo {
-  font-family: 'Amatic SC', sans-serif;
-  font-weight: bold;
-  color: var(--primary);
-  padding: var(--sm) 0;
-}
 
 h1 { 
   font-size: var(--h1-size); 
@@ -145,7 +133,6 @@ p {
 
 button { 
   border-radius: var(--xs); 
-  margin: var(--lg); 
   padding: var(--xs) var(--sm); 
   font-size: 18px; 
   font-weight: bold;
@@ -255,4 +242,40 @@ button:active {
   background-color: transparent; 
 }
 
+.title {
+  color: var(--dark);
+  margin-top: var(--lg);
+  margin-bottom: 40px;
+  font-size: 40px;
+  text-align: center;
+}
 
+form {
+  width: 100%;
+  background-color: var(--wisdom);
+  border-radius: var(--br-md);
+  padding: var(--lg) var(--xl);
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+input {
+  width: 100%;
+  padding: var(--lg);
+  border: none;
+  border-radius: var(--br-md);
+  background-color: var(--dark);
+  color: var(--light-2);
+  margin-bottom: 30px;
+  font-size: var(--xl);
+}
+
+::placeholder {
+  color: var(--grey-lg);
+}
+
+.task-form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-top: 1rem;
+}
