@@ -7,3 +7,6 @@ const HTTP_SERVER = HTTP.createServer((req, res) => {
   res.end('OK response')
 })
 
+HTTP_SERVER.listen(CONSTANTS.PORT, () => {
+  console.log(`HTTP Server listening on Port ${CONSTANTS.PORT}`)
+})
