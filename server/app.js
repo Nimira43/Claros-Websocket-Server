@@ -17,3 +17,7 @@ CONSTANTS.CUSTOM_ERRORS.forEach( errorEvent => {
     process.exit(1)
   })
 })
+
+HTTP_SERVER.on('upgrade', (req, socket, head) => {
+  
+})
