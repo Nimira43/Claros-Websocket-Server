@@ -19,5 +19,5 @@ CONSTANTS.CUSTOM_ERRORS.forEach( errorEvent => {
 })
 
 HTTP_SERVER.on('upgrade', (req, socket, head) => {
-  console.log(req)
+  console.log(socket)
 })
