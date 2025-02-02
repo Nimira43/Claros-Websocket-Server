@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+html {
+  background: #111;
+}
+
+#wrapper {
+  width: 600px;
+  background: #fffaf0;
+  border-top: 5px solid #111;
+  padding: 1rem;
+  margin: 1rem auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#status {
+  display: inline;
+}
+
+#server-response {
+  margin-top: 1rem;
+}
+
+.margin {
+  margin-right: 1rem
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #111;
+  border-radius: 3px;
+  min-height: 20%;
+  background: transparent;
+}
+
+button,
+button#medium-sized-message {
+  border: 1px solid #111;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  color: #111;
+  background: transparent;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}                                            
+
+button[type='submit'] {
+  color: #ff4500;
+  font-weight: 400;
+}
+
+button:hover {
+  background-color: #111;
+  color: #fffaf0;
+}
+
+#form {
+  display: none;
+}
+
+#form.show {
+  display: inline;
+}
+
+.open {
+  color: #1dd31d;
+  font-weight: 400;
+}
+
+.closed {
+  color: #d81f1f;
+  font-weight: 400;
+}
+
+.closing {
+  color: #e2d80c;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+ul li {
+  padding: 0.5rem 1rem;
+  overflow-wrap: break-word;
+}
+
+ul li span {
+  display: inline-block;
+  width: 20%;
+  font-weight: 400;
+  color: #bbb;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.sent {
+  background-color: #eee;
+}
+
+button#medium-sized-message {
+  float: right;
+}
