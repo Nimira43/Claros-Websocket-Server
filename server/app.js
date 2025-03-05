@@ -23,6 +23,6 @@ HTTP_SERVER.on('upgrade', (req, socket, head) => {
   const connectionHeaderCheck = req.headers['connection'].toLowerCase() === CONSTANTS.CONNECTION
   const methodCheck = req.method === CONSTANTS.METHOD
   const origin =req.headers['origin']
+  const originCheck = FUNCTIONS.isOriginAllowed(origin)
 
-  
 })
