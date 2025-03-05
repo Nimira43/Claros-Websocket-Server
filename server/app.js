@@ -25,4 +25,5 @@ HTTP_SERVER.on('upgrade', (req, socket, head) => {
   const origin =req.headers['origin']
   const originCheck = FUNCTIONS.isOriginAllowed(origin)
 
+  if ()
 })
