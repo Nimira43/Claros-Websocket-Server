@@ -4,5 +4,10 @@ module.exports = {
     'uncaughtException',
     'unhandledRejection',
     'SIGINT',     
-  ]
+  ],
+  METHOD: "GET",
+  VERSION: 13,
+  CONNECTION: 'upgrade',
+  UPGRADE: 'websocket'
 }
+
