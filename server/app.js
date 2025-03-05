@@ -18,6 +18,6 @@ CONSTANTS.CUSTOM_ERRORS.forEach( errorEvent => {
   })
 })
 
-HTTP_SERVER.on('upgrade', (req, socket, head) => {
-  console.log(req.headers)
-})
+(HTTP_SERVER.on('upgrade', (req, socket, head) => {
+  const upgradeHeaderCheck = req.headers['upgrade'].toLowerCase() === 'websocket'
+}))
