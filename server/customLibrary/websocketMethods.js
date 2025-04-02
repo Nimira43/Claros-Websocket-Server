@@ -21,6 +21,15 @@ function check(socket, upgradeHeaderCheck, connectionHeaderCheck, methodCheck, o
   }
 }
 
+function createUpgradeHeader() {
+  let headers = [
+    'HTTP/1.1 101 Switching Protocols',
+    'Upgrade: websocket',
+    'Connection: Upgrade',
+    'Sec-Websocket-Accept: ???',
+  ]
+}
+
 module.exports = {
   isOriginAllowed,
   check
