@@ -31,5 +31,5 @@ HTTP_SERVER.on('upgrade', (req, socket, head) => {
 })
 
 function upgradeConnection(req, socket, head) {
-  console.log('All checks completed.')
+  const headers = FUNCTIONS.createUpgradeHeader()
 }
