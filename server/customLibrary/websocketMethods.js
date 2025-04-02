@@ -28,6 +28,7 @@ function createUpgradeHeader() {
     'Connection: Upgrade',
     'Sec-Websocket-Accept: ???',
   ]
+  const upgradeHeaders = headers.join('\r\n') + '\r\n\r\n'
 }
 
 module.exports = {
