@@ -35,7 +35,8 @@ function createUpgradeHeader(clientKey) {
 
 function generateServerKey(clientKey) {
   let data = client + CONSTANTS.GUID
-
+  const hash = crypto.createHash('sha1')
+  hash.update(data)
 }
 
 module.exports = {
