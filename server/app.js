@@ -32,5 +32,5 @@ HTTP_SERVER.on('upgrade', (req, socket, head) => {
 
 function upgradeConnection(req, socket, head) {
   const clientKey = req.headers['sec-websocket-key']
-  const headers = FUNCTIONS.createUpgradeHeader()
+  const headers = FUNCTIONS.createUpgradeHeader(clientKey)
 }

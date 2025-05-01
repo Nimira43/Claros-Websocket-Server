@@ -21,7 +21,8 @@ function check(socket, upgradeHeaderCheck, connectionHeaderCheck, methodCheck, o
   }
 }
 
-function createUpgradeHeader() {
+function createUpgradeHeader(clientKey) {
+  let serverKey = generateServerKey
   let headers = [
     'HTTP/1.1 101 Switching Protocols',
     'Upgrade: websocket',
@@ -30,6 +31,8 @@ function createUpgradeHeader() {
   ]
   const upgradeHeaders = headers.join('\r\n') + '\r\n\r\n'
 }
+
+
 
 module.exports = {
   isOriginAllowed,
