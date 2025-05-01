@@ -23,12 +23,12 @@ function check(socket, upgradeHeaderCheck, connectionHeaderCheck, methodCheck, o
 }
 
 function createUpgradeHeader(clientKey) {
-  let serverKey = generateServerKey
+  let serverKey = generateServerKey(clientKey)
   let headers = [
     'HTTP/1.1 101 Switching Protocols',
     'Upgrade: websocket',
     'Connection: Upgrade',
-    'Sec-Websocket-Accept: ???',
+    `Sec-Websocket-Accept: ${serverKey}`
   ]
   const upgradeHeaders = headers.join('\r\n') + '\r\n\r\n'
 }
