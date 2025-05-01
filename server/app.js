@@ -32,11 +32,11 @@ HTTP_SERVER.on('upgrade', (req, socket, head) => {
 
 function upgradeConnection(req, socket, head) {
   const clientKey = req.headers['sec-websocket-key']
-  const headers = FUNCTIONS.createUpgradeHeader(clientKey)
+  const headers = FUNCTIONS.createUpgradeHeaders(clientKey)
   socket.write(headers)
   startWebSocketConnection(socket)
 }
 
 function startWebSocketConnection(socket) {
-  
+
 }

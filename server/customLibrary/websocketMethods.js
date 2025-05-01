@@ -22,7 +22,7 @@ function check(socket, upgradeHeaderCheck, connectionHeaderCheck, methodCheck, o
   }
 }
 
-function createUpgradeHeader(clientKey) {
+function createUpgradeHeaders(clientKey) {
   let serverKey = generateServerKey(clientKey)
   let headers = [
     'HTTP/1.1 101 Switching Protocols',
@@ -44,5 +44,6 @@ function generateServerKey(clientKey) {
 
 module.exports = {
   isOriginAllowed,
-  check
+  check,
+  createUpgradeHeaders,
 }
