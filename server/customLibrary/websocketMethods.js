@@ -1,4 +1,5 @@
 const CONSTANTS = require('./websocketConstants')
+const crypto = require('crypto')
 
 function isOriginAllowed(origin) {
   return CONSTANTS.ALLOWED_ORIGINS.includes(origin)
@@ -32,7 +33,10 @@ function createUpgradeHeader(clientKey) {
   const upgradeHeaders = headers.join('\r\n') + '\r\n\r\n'
 }
 
+function generateServerKey(clientKey) {
+  let data = client + CONSTANTS.GUID
 
+}
 
 module.exports = {
   isOriginAllowed,
