@@ -5,7 +5,7 @@ module.exports = {
     'unhandledRejection',
     'SIGINT',     
   ],
-  METHOD: "GET",
+  METHOD: 'GET',
   VERSION: 13,
   CONNECTION: 'upgrade',
   UPGRADE: 'websocket',
@@ -14,6 +14,6 @@ module.exports = {
     'http://127.0.0.1:5500',
     'null'
   ],
-  GUID: 
+  GUID: '258EAFA5-E914-47DA-95CA-C5AB0DC85B11'
 }
 
