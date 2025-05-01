@@ -1,0 +1,8 @@
+A Beginner's Guide to WebSockets
+https://www.youtube.com/watch?v=8ARodQ4Wlf4
+
+What is WebSockets - How it Works - An Introduction
+https://www.youtube.com/watch?v=gCkyqAjY-pM
+
+The Complete Guide to WebSockets
+https://www.youtube.com/watch?v=XgFzHXOk8IQ
