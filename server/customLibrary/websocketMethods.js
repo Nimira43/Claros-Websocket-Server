@@ -31,6 +31,7 @@ function createUpgradeHeader(clientKey) {
     `Sec-Websocket-Accept: ${serverKey}`
   ]
   const upgradeHeaders = headers.join('\r\n') + '\r\n\r\n'
+  return upgradeHeaders
 }
 
 function generateServerKey(clientKey) {
