@@ -7,7 +7,8 @@ let message = document.getElementById('message')
 
 openWsBtn.addEventListener('click', () => {
   openWsBtn.disabled = true
-  openWsBtn.style.background = 'yellow'
+  openWsBtn.style.background = '#111'
+  openWsBtn.style.color = '#fffcfa'
   openWsBtn.style.pointerEvents = 'none'
   openWsBtn.textContent = 'Button Disabled'
   
