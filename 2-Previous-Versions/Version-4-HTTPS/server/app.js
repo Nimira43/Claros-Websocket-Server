@@ -1,8 +1,16 @@
 const HTTPS = require('https')
+const fs = require('fs')
+
 const CONSTANTS = require('./customLibrary/websocketConstants')
 const FUNCTIONS = require('./customLibrary/websocketMethods')
 
-const HTTP_SERVER = HTTP.createServer((req, res) => {
+const serverKey = fs.readFileSync('cert.key')
+const serverCert = fs.readFileSync('cert.crt')
+
+const HTTPS_SERVER = HTTPS.createServer({
+  key: serverKey, 
+  cert: serverCert
+}, (req, res) => {
   res.writeHead(200)
   res.end('OK response')
 })
