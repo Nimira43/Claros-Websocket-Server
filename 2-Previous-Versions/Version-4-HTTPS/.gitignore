@@ -1,0 +1,24 @@
+# Ignore local HTTPS certs
+ca.crt
+ca.key
+
+# LiveServer artifacts (if any)
+*.pem
+
+# Node stuff
+node_modules/
+npm-debug.log*
+.env
+
+# VS Code and OS junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Optional: ignore generated certs in server folder too
+server/**/*.crt
+server/**/*.key
