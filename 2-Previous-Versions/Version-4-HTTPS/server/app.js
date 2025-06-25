@@ -1,4 +1,4 @@
-const HTTP = require('http')
+const HTTPS = require('https')
 const CONSTANTS = require('./customLibrary/websocketConstants')
 const FUNCTIONS = require('./customLibrary/websocketMethods')
 
