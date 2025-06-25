@@ -13,7 +13,7 @@ openWsBtn.addEventListener('click', () => {
   openWsBtn.textContent = 'Button Disabled'
   
   socketStatus.innerHTML = 'Connecting...'
-  let url = 'ws://127.0.0.1:8080'
+  let url = 'https://127.0.0.1:4430'
   let socket = new WebSocket(url)
 
   socket.onopen = (openEvent) => {
