@@ -94,7 +94,11 @@ class WebSocketReceiver {
       return this._buffersArray.shift()
     }
     if (n < this._buffersArray[0].length) {
-      
-    }    
+      const infoBuffer = this._buffersArray[0]
+      this._buffersArray[0] = this._buffersArray[0].slice(n)
+      return infoBuffer.slice(0, n)
+    } else {
+      throw Error('You cannot extract more data from a Wensocket frame than the actual frame size.')
+    }   
   }
 }
