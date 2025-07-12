@@ -56,5 +56,7 @@ class WebSocketReceiver {
     this._socket = socket
   }
 
+  _buffersArray = []
+  _bufferedBytesLength = 0
   
 }
