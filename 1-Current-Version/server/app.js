@@ -46,6 +46,11 @@ function startWebSocketConnection(socket) {
     console.log('Chunk received.')
     receiver.processBuffer(chunk)
   })
+  socket.on('end', () => {
+    console.log('Websocket closed. There will be no more data.')
+  })
 }
 
-function WebSocketReceiver(socket) {}
+function WebSocketReceiver(socket) {
+
+}
