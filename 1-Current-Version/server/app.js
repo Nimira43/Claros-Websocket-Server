@@ -52,5 +52,9 @@ function startWebSocketConnection(socket) {
 }
 
 class WebSocketReceiver {
+  constructor(socket) {
+    this._socket = socket
+  }
+
   
 }
