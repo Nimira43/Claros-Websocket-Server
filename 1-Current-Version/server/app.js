@@ -88,4 +88,13 @@ class WebSocketReceiver {
   _getInfo() {
     const infoBuffer = this._consumeHeaders(CONSTANTS.MIN_FRAME_SIZE)
   }
+  _consumeHeaders(n) {
+    this._bufferedBytesLength -= n
+    if (n === this._buffersArray[0].length) {
+      return this._buffersArray.shift()
+    }
+    if (n < this._buffersArray[0].length) {
+      
+    }    
+  }
 }
