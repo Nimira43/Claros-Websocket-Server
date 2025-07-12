@@ -80,7 +80,12 @@ class WebSocketReceiver {
       switch(this._task) {
         case GET_INFO:
           this.getInfo()
+          break
       }
     } while (this._taskLoop)
+  }
+
+  _getInfo() {
+    const infoBuffer = this._consumeHeaders(CONSTANTS.MIN_FRAME_SIZE)
   }
 }
