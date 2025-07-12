@@ -2,6 +2,12 @@ const HTTP = require('http')
 const CONSTANTS = require('./customLibrary/websocketConstants')
 const FUNCTIONS = require('./customLibrary/websocketMethods')
 
+const GET_INFO = 1
+const GET_LENGTH = 2
+const GET_MASK_KEY = 3
+const GET_PAYLOAD = 4
+const SEND_ECHO = 5 
+
 const HTTP_SERVER = HTTP.createServer((req, res) => {
   res.writeHead(200)
   res.end('OK response')
@@ -59,7 +65,7 @@ class WebSocketReceiver {
   _buffersArray = []
   _bufferedBytesLength = 0
   _taskLoop = false
-
+  _task = GET_INFO
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
@@ -67,5 +73,11 @@ class WebSocketReceiver {
     this._startTaskLoop()
   }
 
-  _startTaskLoop() {}
+  _startTaskLoop() {
+    this._taskLoop = true
+
+    do {
+      switch()
+    } while (this._taskLoop)
+  }
 }
