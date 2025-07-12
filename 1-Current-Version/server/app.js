@@ -96,7 +96,7 @@ class WebSocketReceiver {
     const secondByte = infoBuffer[1]
 
     this._fin = (firstByte & 0b10000000) === 0b10000000
-    
+    this._opcode = firstByte & 0b00001111 
 
   }
   _consumeHeaders(n) {
