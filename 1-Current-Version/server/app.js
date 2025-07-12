@@ -94,6 +94,8 @@ class WebSocketReceiver {
     const infoBuffer = this._consumeHeaders(CONSTANTS.MIN_FRAME_SIZE)
     const firstByte = infoBuffer[0]
     const secondByte = infoBuffer[1]
+
+    this._fin = (firstByte & 0b10000000) === 0b10000000
     
 
   }
