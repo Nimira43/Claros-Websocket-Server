@@ -39,9 +39,11 @@ function upgradeConnection(req, socket, head) {
 
 function startWebSocketConnection(socket) {
   console.log(`Websocket connection established with Client on Port ${socket.remotePort}`)
-  
+
+  const receiver = new WebSocketReceiver(socket)
+
   socket.on('data', (chunk) => {
     console.log('Chunk received.')
-    receiver.processBuffer(chunk, socket)
+    receiver.processBuffer(chunk)
   })
 }
