@@ -51,6 +51,6 @@ function startWebSocketConnection(socket) {
   })
 }
 
-function WebSocketReceiver(socket) {
-
+class WebSocketReceiver {
+  
 }
