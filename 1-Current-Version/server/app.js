@@ -47,3 +47,5 @@ function startWebSocketConnection(socket) {
     receiver.processBuffer(chunk)
   })
 }
+
+function WebSocketReceiver(socket) {}
