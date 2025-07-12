@@ -59,8 +59,12 @@ class WebSocketReceiver {
   _buffersArray = []
   _bufferedBytesLength = 0
 
+
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
     this._bufferedBytesLength += chunk.length
+    this._startTaskLoop()
   }
+
+  _startTaskLoop() {}
 }
