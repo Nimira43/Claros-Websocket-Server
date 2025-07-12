@@ -1,6 +1,7 @@
 const HTTP = require('http')
 const CONSTANTS = require('./customLibrary/websocketConstants')
 const FUNCTIONS = require('./customLibrary/websocketMethods')
+const { log } = require('console')
 
 const GET_INFO = 1
 // const GET_LENGTH = 2
@@ -66,6 +67,10 @@ class WebSocketReceiver {
   _bufferedBytesLength = 0
   _taskLoop = false
   _task = GET_INFO
+  _fin = false
+  _opcode = null
+  _masked = false
+  _initialPayloadSizeIndicator = 0
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
@@ -79,7 +84,7 @@ class WebSocketReceiver {
     do {
       switch(this._task) {
         case GET_INFO:
-          this.getInfo()
+          this._getInfo()
           break
       }
     } while (this._taskLoop)
@@ -89,8 +94,8 @@ class WebSocketReceiver {
     const infoBuffer = this._consumeHeaders(CONSTANTS.MIN_FRAME_SIZE)
     const firstByte = infoBuffer[0]
     const secondByte = infoBuffer[1]
-
     
+
   }
   _consumeHeaders(n) {
     this._bufferedBytesLength -= n
