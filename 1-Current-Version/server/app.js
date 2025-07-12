@@ -38,5 +38,5 @@ function upgradeConnection(req, socket, head) {
 }
 
 function startWebSocketConnection(socket) {
-
+  console.log(`Websocket connection established with Client on Port ${socket.remotePort}`)
 }
