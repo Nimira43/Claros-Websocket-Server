@@ -58,6 +58,7 @@ class WebSocketReceiver {
 
   _buffersArray = []
   _bufferedBytesLength = 0
+  _taskLoop = false
 
 
   processBuffer(chunk) {
