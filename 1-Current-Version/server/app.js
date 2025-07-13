@@ -99,7 +99,12 @@ class WebSocketReceiver {
     this._opcode = firstByte & 0b00001111 
     this._masked = (secondByte & 0b10000000) === 0b10000000
     this._initialPayloadSizeIndicator = secondByte & 0b01111111
+
+    if (!this._masked) {
+      throw new Error ('Mask is not set by the Client.')
+    }
   }
+
   _consumeHeaders(n) {
     this._bufferedBytesLength -= n
     if (n === this._buffersArray[0].length) {
