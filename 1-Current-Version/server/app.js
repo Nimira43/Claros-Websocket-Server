@@ -4,7 +4,7 @@ const FUNCTIONS = require('./customLibrary/websocketMethods')
 const { log } = require('console')
 
 const GET_INFO = 1
-// const GET_LENGTH = 2
+const GET_LENGTH = 2
 // const GET_MASK_KEY = 3
 // const GET_PAYLOAD = 4
 // const SEND_ECHO = 5 
@@ -86,6 +86,9 @@ class WebSocketReceiver {
         case GET_INFO:
           this._getInfo()
           break
+        case GET_LENGTH:
+          this._getInfo()
+          break
       }
     } while (this._taskLoop)
   }
@@ -103,6 +106,8 @@ class WebSocketReceiver {
     if (!this._masked) {
       throw new Error ('Mask is not set by the Client.')
     }
+
+    this_task = GET_LENGTH
   }
 
   _consumeHeaders(n) {
@@ -117,5 +122,8 @@ class WebSocketReceiver {
     } else {
       throw Error('You cannot extract more data from a Wensocket frame than the actual frame size.')
     }   
+  }
+  _getLength() {
+    
   }
 }
