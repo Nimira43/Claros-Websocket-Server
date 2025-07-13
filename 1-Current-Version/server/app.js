@@ -87,7 +87,7 @@ class WebSocketReceiver {
           this._getInfo()
           break
         case GET_LENGTH:
-          this._getInfo()
+          this._getLength()
           break
       }
     } while (this._taskLoop)
@@ -124,6 +124,6 @@ class WebSocketReceiver {
     }   
   }
   _getLength() {
-    
+
   }
 }
