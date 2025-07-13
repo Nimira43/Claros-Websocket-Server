@@ -98,6 +98,7 @@ class WebSocketReceiver {
     this._fin = (firstByte & 0b10000000) === 0b10000000
     this._opcode = firstByte & 0b00001111 
     this._masked = (secondByte & 0b10000000) === 0b10000000
+    this._initialPayloadSizeIndicator = secondByte & 0b01111111
   }
   _consumeHeaders(n) {
     this._bufferedBytesLength -= n
