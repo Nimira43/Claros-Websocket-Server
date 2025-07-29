@@ -139,7 +139,7 @@ class WebSocketReceiver {
         break
       default:
         this._framePayloadLength = this._initialPayloadSizeIndicator
-        this.processBuffer()
+        this.processLength()
     } 
   }
 }
