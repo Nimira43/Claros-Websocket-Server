@@ -71,6 +71,7 @@ class WebSocketReceiver {
   _opcode = null
   _masked = false
   _initialPayloadSizeIndicator = 0
+  _framePayloadLength = 0 
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
