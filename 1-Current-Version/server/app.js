@@ -74,7 +74,7 @@ class WebSocketReceiver {
   _framePayloadLength = 0 
   _maxPayload = 1024 * 1024
   _totalPayloadLength = 0
-  _mask = Buffer.alloc(4)
+  _mask = Buffer.alloc(CONSTANTS.MASK_LENGTH)
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
@@ -159,6 +159,7 @@ class WebSocketReceiver {
   }
 
   _getMaskKey() {
-    this._mask = this,this._consumeHeaders(CONSTANTS.)
+    this._mask = this._consumeHeaders(CONSTANTS.MASK_LENGTH)
+    this._task = GET_PAYLOAD
   }
 }
