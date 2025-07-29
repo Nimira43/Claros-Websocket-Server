@@ -5,9 +5,9 @@ const { log } = require('console')
 
 const GET_INFO = 1
 const GET_LENGTH = 2
-// const GET_MASK_KEY = 3
-// const GET_PAYLOAD = 4
-// const SEND_ECHO = 5 
+const GET_MASK_KEY = 3
+const GET_PAYLOAD = 4
+const SEND_ECHO = 5 
 
 const HTTP_SERVER = HTTP.createServer((req, res) => {
   res.writeHead(200)
@@ -151,6 +151,6 @@ class WebSocketReceiver {
     if (this._totalPayloadLength > this._maxPayload ) {
       throw new Error('Data is too large.')
     }
-    
+    this._task = GET_MASK_KEY
   }
 }
