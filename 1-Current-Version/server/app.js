@@ -72,6 +72,7 @@ class WebSocketReceiver {
   _masked = false
   _initialPayloadSizeIndicator = 0
   _framePayloadLength = 0 
+  _maxPayload = 1024 * 1024
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
@@ -142,5 +143,5 @@ class WebSocketReceiver {
         this.processLength()
     } 
   }
-  
+
 }
