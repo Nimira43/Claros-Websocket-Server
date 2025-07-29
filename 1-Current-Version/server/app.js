@@ -92,6 +92,9 @@ class WebSocketReceiver {
         case GET_LENGTH:
           this._getLength()
           break
+        case GET_MASK_KEY:
+          this._getMaskKey()
+          break
       }
     } while (this._taskLoop)
   }
