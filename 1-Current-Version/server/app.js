@@ -124,6 +124,14 @@ class WebSocketReceiver {
     }   
   }
   _getLength() {
+    switch (this._initialPayloadSizeIndicator) {
+      case :
+        
+        break;
     
+      default:
+        break;
+    } 
+
   }
 }
