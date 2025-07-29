@@ -125,7 +125,8 @@ class WebSocketReceiver {
   }
   _getLength() {
     switch (this._initialPayloadSizeIndicator) {
-      case :
+      case CONSTANTS.MEDIUM_DATA_FLAG:
+        let payloadLengthBuffer = this._consumeHeaders(CONSTANTS.MEDIUM_SIZE_CONSUMPTION)
         
         break;
     
