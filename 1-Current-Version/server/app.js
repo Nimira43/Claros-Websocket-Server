@@ -159,6 +159,6 @@ class WebSocketReceiver {
   }
 
   _getMaskKey() {
-    this
+    this._mask = this,this._consumeHeaders(CONSTANTS.)
   }
 }
