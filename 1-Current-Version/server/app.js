@@ -141,13 +141,13 @@ class WebSocketReceiver {
       default:
         this._framePayloadLength = this._initialPayloadSizeIndicator
         this._processLength()
-    }
-    
-    _processLength() {
+    }     
+  }
+
+  _processLength() {
       
 
 
 
-    }
   }
 }
