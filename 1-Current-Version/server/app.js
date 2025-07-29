@@ -148,10 +148,9 @@ class WebSocketReceiver {
 
   _processLength() {
     this._totalPayloadLength += this._framePayloadLength
-
-    if ()
-
-
-
+    if (this._totalPayloadLength > this._maxPayload ) {
+      throw new Error('Data is too large.')
+    }
+    
   }
 }
