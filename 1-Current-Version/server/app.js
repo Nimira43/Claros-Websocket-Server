@@ -147,6 +147,8 @@ class WebSocketReceiver {
   }
 
   _processLength() {
+    this._totalPayloadLength += this._framePayloadLength
+
     if ()
 
 
