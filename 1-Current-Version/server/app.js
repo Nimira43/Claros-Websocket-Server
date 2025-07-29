@@ -73,6 +73,7 @@ class WebSocketReceiver {
   _initialPayloadSizeIndicator = 0
   _framePayloadLength = 0 
   _maxPayload = 1024 * 1024
+  _totalPayloadLength = 0
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
@@ -125,6 +126,7 @@ class WebSocketReceiver {
       throw Error('You cannot extract more data from a Websocket frame than the actual frame size.')
     }   
   }
+  
   _getLength() {
     switch (this._initialPayloadSizeIndicator) {
       case CONSTANTS.MEDIUM_DATA_FLAG:
@@ -145,7 +147,7 @@ class WebSocketReceiver {
   }
 
   _processLength() {
-      
+    if ()
 
 
 
