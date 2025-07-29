@@ -156,4 +156,8 @@ class WebSocketReceiver {
     }
     this._task = GET_MASK_KEY
   }
+
+  _getMaskKey() {
+    
+  }
 }
