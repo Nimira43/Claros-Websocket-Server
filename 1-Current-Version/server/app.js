@@ -120,10 +120,10 @@ class WebSocketReceiver {
       this._buffersArray[0] = this._buffersArray[0].slice(n)
       return infoBuffer.slice(0, n)
     } else {
-      throw Error('You cannot extract more data from a Wensocket frame than the actual frame size.')
+      throw Error('You cannot extract more data from a Websocket frame than the actual frame size.')
     }   
   }
   _getLength() {
-
+    
   }
 }
