@@ -180,5 +180,11 @@ class WebSocketReceiver {
   consumePayload(n) {
     this._bufferedBytesLength -= n
     const payloadBuffer = Buffer.alloc(n)
+    let totalBytesRead = 0
+
+    while(totalBytesRead < n) {
+      const buf = this._buffersArray[0]
+      const bytesToRead = Math.min(n - totalBytesRead)
+    }
   }
 }
