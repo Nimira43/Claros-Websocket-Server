@@ -176,4 +176,8 @@ class WebSocketReceiver {
 
     let full_masked_payload_buffer = this.consumePayload(this._framePayloadLength)
   }
+
+  consumePayload(n) {
+    
+  }
 }
