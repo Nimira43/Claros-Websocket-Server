@@ -96,6 +96,9 @@ class WebSocketReceiver {
         case GET_MASK_KEY:
           this._getMaskKey()
           break
+        case GET_PAYLOAD:
+          this.getPayload()
+          break
       }
     } while (this._taskLoop)
   }
