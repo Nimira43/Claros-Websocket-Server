@@ -165,4 +165,11 @@ class WebSocketReceiver {
     this._mask = this._consumeHeaders(CONSTANTS.MASK_LENGTH)
     this._task = GET_PAYLOAD
   }
+
+  _getPayload() {
+    if (this._bufferedBytesLength < this._framePayloadLength) {
+      this._taskLoop = false
+      return
+    }
+  }
 }
