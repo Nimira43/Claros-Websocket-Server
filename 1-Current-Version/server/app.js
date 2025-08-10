@@ -178,6 +178,7 @@ class WebSocketReceiver {
   }
 
   consumePayload(n) {
-    
+    this._bufferedBytesLength -= n
+    const payloadBuffer = Buffer.alloc(n)
   }
 }
