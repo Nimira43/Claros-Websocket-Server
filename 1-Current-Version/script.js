@@ -24,7 +24,7 @@ openWsBtn.addEventListener('click', () => {
 
     console.log("SOCKET CONNECTING STATUS IS: " + socket.readyState)
 
-    socketStatus.innerHTML = `Connected to: ${openEvent.currentTarget,url}`
+    socketStatus.innerHTML = `Connected to: ${openEvent.currentTarget.url}`
     socketStatus.className = 'open'
     form.className = 'show'
   }
