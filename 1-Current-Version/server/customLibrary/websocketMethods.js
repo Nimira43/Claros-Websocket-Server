@@ -42,6 +42,10 @@ function generateServerKey(clientKey) {
   return serverKey
 }
 
+function _unmaskPayload(payload, maskKey) {
+  
+}
+
 module.exports = {
   isOriginAllowed,
   check,
