@@ -53,4 +53,5 @@ module.exports = {
   isOriginAllowed,
   check,
   createUpgradeHeaders,
+  _unmaskPayload
 }
