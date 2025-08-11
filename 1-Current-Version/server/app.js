@@ -185,6 +185,7 @@ class WebSocketReceiver {
     while(totalBytesRead < n) {
       const buf = this._buffersArray[0]
       const bytesToRead = Math.min(n - totalBytesRead)
+      buf.copy(payloadBuffer, totalBytesRead, 0, bytesToRead)
     }
   }
 }
