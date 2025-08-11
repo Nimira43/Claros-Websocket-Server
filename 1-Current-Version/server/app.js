@@ -98,7 +98,7 @@ class WebSocketReceiver {
           this._getMaskKey()
           break
         case GET_PAYLOAD:
-          this.getPayload()
+          this._getPayload()
           break
       }
     } while (this._taskLoop)
@@ -118,7 +118,7 @@ class WebSocketReceiver {
       throw new Error ('Mask is not set by the Client.')
     }
 
-    this_task = GET_LENGTH
+    this._task = GET_LENGTH
   }
 
   _consumeHeaders(n) {
