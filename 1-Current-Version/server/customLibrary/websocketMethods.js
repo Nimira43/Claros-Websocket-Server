@@ -46,6 +46,7 @@ function _unmaskPayload(payloadBuffer, maskKey) {
   for (let i = 0; i < payloadBuffer.length; i++) {
     payloadBuffer[i] = payloadBuffer[i] ^ maskKey[i % CONSTANTS.MASK_LENGTH]
   }
+  return payloadBuffer
 }
 
 module.exports = {
