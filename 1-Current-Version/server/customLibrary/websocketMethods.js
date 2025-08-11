@@ -42,8 +42,10 @@ function generateServerKey(clientKey) {
   return serverKey
 }
 
-function _unmaskPayload(payload, maskKey) {
-  
+function _unmaskPayload(payloadBuffer, maskKey) {
+  for (let i = 0; i < payloadBuffer.length; i++) {
+    
+  }
 }
 
 module.exports = {
