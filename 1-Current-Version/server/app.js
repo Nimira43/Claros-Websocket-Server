@@ -76,6 +76,7 @@ class WebSocketReceiver {
   _totalPayloadLength = 0
   _mask = Buffer.alloc(CONSTANTS.MASK_LENGTH)
   _framesReceived = 0
+  _fragments = []
 
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
@@ -177,6 +178,8 @@ class WebSocketReceiver {
     let full_masked_payload_buffer = this.consumePayload(this._framePayloadLength)
 
     let full_unmasked_payload_buffer = FUNCTIONS._unmaskPayload(full_masked_payload_buffer, this._mask)
+
+
   }
 
   consumePayload(n) {
