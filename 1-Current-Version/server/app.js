@@ -182,6 +182,10 @@ class WebSocketReceiver {
     if (full_unmasked_payload_buffer/length) {
       this._fragments.push(full_unmasked_payload_buffer)
     }
+
+    if (!this._fin) {
+      this._task = GET_INFO
+    }
   }
 
   consumePayload(n) {
