@@ -185,6 +185,11 @@ class WebSocketReceiver {
 
     if (!this._fin) {
       this._task = GET_INFO
+    } else {
+      console.log(`Total frames received in this Websocket message: ${this._framesReceived}`)
+      console.log(`Total payload size of the Websocket message: ${this._totalPayloadLength}`)
+
+      this._task = SEND_ECHO
     }
   }
 
