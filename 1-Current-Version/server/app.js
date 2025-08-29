@@ -202,7 +202,8 @@ class WebSocketReceiver {
       const buf = this._buffersArray[0]
       const bytesToRead = Math.min(n - totalBytesRead, buf.length)
       buf.copy(payloadBuffer, totalBytesRead, 0, bytesToRead)
-      
+      totalBytesRead += bytesToRead
+
       if (bytesToRead < buf.length) {
         this._buffersArray[0] = buf.slice(bytesToRead)
       } else {
