@@ -179,7 +179,7 @@ class WebSocketReceiver {
 
     let full_unmasked_payload_buffer = FUNCTIONS._unmaskPayload(full_masked_payload_buffer, this._mask)
 
-    if (full_unmasked_payload_buffer/length) {
+    if (full_unmasked_payload_buffer.length) {
       this._fragments.push(full_unmasked_payload_buffer)
     }
 
@@ -200,7 +200,7 @@ class WebSocketReceiver {
 
     while(totalBytesRead < n) {
       const buf = this._buffersArray[0]
-      const bytesToRead = Math.min(n - totalBytesRead)
+      const bytesToRead = Math.min(n - totalBytesRead, buf.length)
       buf.copy(payloadBuffer, totalBytesRead, 0, bytesToRead)
       
       if (bytesToRead < buf.length) {
