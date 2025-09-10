@@ -80,6 +80,7 @@ class WebSocketReceiver {
   processBuffer(chunk) {
     this._buffersArray.push(chunk)
     this._bufferedBytesLength += chunk.length
+    console.log('Chunk received. Size: ' + chunk.length)
     this._startTaskLoop()
   }
 
@@ -105,6 +106,11 @@ class WebSocketReceiver {
   }
 
   _getInfo() {
+    if (this._bufferedBytesLength < CONSTANTS.MIN_FRAME_SIZE) {
+      this._taskLoop = false
+      return
+    }
+
     const infoBuffer = this._consumeHeaders(CONSTANTS.MIN_FRAME_SIZE)
     const firstByte = infoBuffer[0]
     const secondByte = infoBuffer[1]
