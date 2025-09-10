@@ -1,5 +1,7 @@
 let openWsBtn = document.getElementById('open-ws')
 let closeWsBtn = document.getElementById('close-ws')
+let populate_btn = document.getElementById('populate')
+
 let form = document.getElementById('form')
 let socketStatus = document.getElementById('status')
 let table = document.getElementsByTagName('ul')[0]
@@ -27,6 +29,7 @@ openWsBtn.addEventListener('click', () => {
     socketStatus.innerHTML = `Connected to: ${openEvent.currentTarget.url}`
     socketStatus.className = 'open'
     form.className = 'show'
+    populate_btn.addEventListener('click', () => {})
   }
 
   socket.onmessage = function(message) {
