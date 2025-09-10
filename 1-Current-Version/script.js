@@ -15,8 +15,8 @@ openWsBtn.addEventListener('click', () => {
   openWsBtn.style.color = '#fffcfa'
   openWsBtn.style.pointerEvents = 'none'
   openWsBtn.textContent = 'Button Disabled'
-  
   socketStatus.innerHTML = 'Connecting...'
+  
   let url = 'ws://127.0.0.1:8080'
   let socket = new WebSocket(url)
 
@@ -65,7 +65,7 @@ openWsBtn.addEventListener('click', () => {
   }
 
   socket.onerror = (error) => {
-    console.log(error)
+    console.log('Error event was thrown. ERROR OBJECT: ', error)
     socketStatus.innerHTML = 'Error'
     socketStatus.className = 'closed'
   }
