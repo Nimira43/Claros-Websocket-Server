@@ -188,7 +188,9 @@ class WebSocketReceiver {
       throw new Error('Server has not yet dealt with a closure frame.')
     }
 
-    
+    if ([CONSTANTS.OPCODE_BINARY, CONSTANTS.OPCODE_PING, CONSTANTS.OPCODE_PONG].includes(this._opcode)) {
+      throw new Error('Server has not yet dealt with this type of frame.')
+    }
 
     if (full_unmasked_payload_buffer.length) {
       this._fragments.push(full_unmasked_payload_buffer)
