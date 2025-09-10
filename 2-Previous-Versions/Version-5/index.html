@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./images/billy.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Claros - Websocket Server with Node</title>
+</head>
+<body>
+  <div id="wrapper">
+    <h1 class="title">Claros - Websocket Server</h1>
+    <button type="submit" id="open-ws" class="margin">Open Websocket</button>
+    <div id="status">Status: Not Connected</div>
+    <ul id="table"></ul>
+    <form id="form">
+      <textarea id="message" placeholder="Enter message..." required></textarea>
+      <button type="submit" class="margin">Send Message</button>
+      <button id="close-ws">Close Connection</button>
+    </form>
+  </div>
+  <script src="script.js"></script> 
+
+</body>
+</html>
