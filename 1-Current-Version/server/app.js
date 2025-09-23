@@ -264,7 +264,7 @@ class WebSocketReceiver {
     let maskingBit = 0x00
 
     if (payloadLength <= CONSTANTS.SMALL_DATA_SIZE) {
-      
+
     }
 
 
