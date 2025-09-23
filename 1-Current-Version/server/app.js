@@ -150,7 +150,7 @@ class WebSocketReceiver {
         break
       case CONSTANTS.LARGE_DATA_FLAG:
         let largePayloadLengthBuffer = this._consumeHeaders(CONSTANTS.LARGE_SIZE_CONSUMPTION)
-        let bufBigInt = largePayloadLengthBuffer.readUInt64BE()
+        let bufBigInt = largePayloadLengthBuffer.readBigUInt64BE()
         this._framePayloadLength = Number(bufBigInt)
         this._processLength()
         break
