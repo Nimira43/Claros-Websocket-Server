@@ -277,5 +277,7 @@ class WebSocketReceiver {
     fullMessage.copy(frame, messageStartOffset)
 
     this._socket.write(frame)
+    this._taskLoop = false
+    this._task = GET_INFO
   }
 }
