@@ -233,5 +233,14 @@ class WebSocketReceiver {
     const fullMessage = Buffer.concat(this._fragments)
     let payloadLength = fullMessage.length
     let additionalPayloadSizeIndicator = null
+
+    switch (key) {
+      case value:
+        
+        break
+    
+      default:
+        break
+    }
   }
 }
