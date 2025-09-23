@@ -259,6 +259,8 @@ class WebSocketReceiver {
                     (rsv2 << 5) |
                     (rsv3 << 4) |
                     opcode
+    
+    frame[0] = firstByte
 
 
 
