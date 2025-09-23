@@ -238,7 +238,7 @@ class WebSocketReceiver {
       case (payloadLength <= CONSTANTS.SMALL_DATA_SIZE):
         additionalPayloadSizeIndicator = 0
         break
-    
+      case (payloadLength > CONSTANTS.SMALL_DATA_SIZE && payloadLength <= )
       default:
         break
     }
