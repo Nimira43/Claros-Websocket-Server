@@ -270,7 +270,7 @@ class WebSocketReceiver {
       frame.writeUInt16BE(payloadLength, CONSTANTS.MIN_FRAME_SIZE)
     } else {
       frame[1] = (maskingBit | CONSTANTS.LARGE_DATA_FLAG)
-      frame.writeBigInt64BE(payloadLength, CONSTANTS.MIN_FRAME_SIZE)
+      frame.writeBigInt64BE(BigInt(payloadLength), CONSTANTS.MIN_FRAME_SIZE)
     }
 
 
