@@ -245,5 +245,9 @@ class WebSocketReceiver {
         additionalPayloadSizeIndicator = CONSTANTS.LARGE_SIZE_CONSUMPTION
         break
     }
+
+    const frame = Buffer.alloc(CONSTANTS.MIN_FRAME_SIZE + additionalPayloadSizeIndicator + payloadLength)
+
+    
   }
 }
