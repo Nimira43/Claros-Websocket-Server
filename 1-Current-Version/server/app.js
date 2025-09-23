@@ -28,7 +28,7 @@ HTTP_SERVER.on('upgrade', (req, socket, head) => {
   const upgradeHeaderCheck = req.headers['upgrade'].toLowerCase() === CONSTANTS.UPGRADE
   const connectionHeaderCheck = req.headers['connection'].toLowerCase() === CONSTANTS.CONNECTION
   const methodCheck = req.method === CONSTANTS.METHOD
-  const origin =req.headers['origin']
+  const origin = req.headers['origin']
   const originCheck = FUNCTIONS.isOriginAllowed(origin)
 
   if (FUNCTIONS.check(socket, upgradeHeaderCheck, connectionHeaderCheck, methodCheck, originCheck)) {
@@ -180,7 +180,7 @@ class WebSocketReceiver {
     }
     this._framesReceived++
 
-    let full_masked_payload_buffer = this.consumePayload(this._framePayloadLength)
+    let full_masked_payload_buffer = this._consumePayload(this._framePayloadLength)
 
     let full_unmasked_payload_buffer = FUNCTIONS._unmaskPayload(full_masked_payload_buffer, this._mask)
 
@@ -206,7 +206,7 @@ class WebSocketReceiver {
     }
   }
 
-  consumePayload(n) {
+  _consumePayload(n) {
     this._bufferedBytesLength -= n
     const payloadBuffer = Buffer.alloc(n)
     let totalBytesRead = 0
