@@ -101,6 +101,9 @@ class WebSocketReceiver {
         case GET_PAYLOAD:
           this._getPayload()
           break
+        case SEND_ECHO:
+          this._sendEcho()
+          break
       }
     } while (this._taskLoop)
   }
@@ -203,7 +206,6 @@ class WebSocketReceiver {
       console.log(`Total payload size of the Websocket message: ${this._totalPayloadLength}`)
 
       this._task = SEND_ECHO
-      this._socket.write('Socket Write - Hello Message!')
     }
   }
 
