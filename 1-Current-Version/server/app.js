@@ -276,5 +276,6 @@ class WebSocketReceiver {
     const messageStartOffset = CONSTANTS.MIN_FRAME_SIZE + additionalPayloadSizeIndicator
     fullMessage.copy(frame, messageStartOffset)
 
+    this._socket.write(frame)
   }
 }
