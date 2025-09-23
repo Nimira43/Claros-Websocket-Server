@@ -232,6 +232,6 @@ class WebSocketReceiver {
   _sendEcho() {
     const fullMessage = Buffer.concat(this._fragments)
     let payloadLength = fullMessage.length
-    
+    let additionalPayloadSizeIndicator = null
   }
 }
