@@ -254,6 +254,12 @@ class WebSocketReceiver {
     let rsv3 = 0x00
     let opcode = CONSTANTS.OPCODE_BINARY
 
+    let firstByte = (fin << 7) | 
+                    (rsv1 << 6) | 
+                    (rsv2 << 5) |
+                    (rsv3 << 4) |
+                    opcode
+
 
 
   }
