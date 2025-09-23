@@ -228,4 +228,10 @@ class WebSocketReceiver {
     }
     return payloadBuffer
   }
+
+  _sendEcho() {
+    const fullMessage = Buffer.concat(this._fragments)
+    let payloadLength = fullMessage.length
+    
+  }
 }
