@@ -248,6 +248,11 @@ class WebSocketReceiver {
 
     const frame = Buffer.alloc(CONSTANTS.MIN_FRAME_SIZE + additionalPayloadSizeIndicator + payloadLength)
 
+    let fin = 0x01
+    let rsv1 = 0x00
+    let rsv2 = 0x00
+    let rsv3 = 0x00
+
     
   }
 }
