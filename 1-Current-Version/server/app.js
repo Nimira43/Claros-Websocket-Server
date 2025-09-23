@@ -242,6 +242,7 @@ class WebSocketReceiver {
         additionalPayloadSizeIndicator = CONSTANTS.MEDIUM_SIZE_CONSUMPTION
         break
       default:
+        additionalPayloadSizeIndicator = CONSTANTS.LARGE_SIZE_CONSUMPTION
         break
     }
   }
