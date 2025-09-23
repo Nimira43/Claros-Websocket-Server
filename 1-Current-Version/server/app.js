@@ -235,8 +235,8 @@ class WebSocketReceiver {
     let additionalPayloadSizeIndicator = null
 
     switch (true) {
-      case (payloadLength <= 125):
-
+      case (payloadLength <= CONSTANTS.SMALL_DATA_SIZE):
+        additionalPayloadSizeIndicator = 0
         break
     
       default:
