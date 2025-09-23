@@ -267,6 +267,7 @@ class WebSocketReceiver {
       frame[1] = (maskingBit | payloadLength)
     } else if (payloadLength > CONSTANTS.SMALL_DATA_SIZE && payloadLength <= CONSTANTS.MEDIUM_DATA_SIZE) {
       frame[1] = (maskingBit | CONSTANTS.MEDIUM_DATA_FLAG)
+      frame.writeUInt16BE(payloadLength, CONSTANTS.MIN_FRAME_SIZE)
     }
 
 
