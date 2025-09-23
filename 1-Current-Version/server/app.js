@@ -259,9 +259,13 @@ class WebSocketReceiver {
                     (rsv2 << 5) |
                     (rsv3 << 4) |
                     opcode
-    
     frame[0] = firstByte
 
+    let maskingBit = 0x00
+
+    if (payloadLength <= CONSTANTS.SMALL_DATA_SIZE) {
+      
+    }
 
 
   }
