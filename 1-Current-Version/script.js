@@ -7,7 +7,7 @@ let socketStatus = document.getElementById('status')
 let table = document.getElementsByTagName('ul')[0]
 let message = document.getElementById('message')
 
-let text = 'A'.repeat(50000)
+let text = 'A'.repeat(150000)
 
 openWsBtn.addEventListener('click', () => {
   openWsBtn.disabled = true
