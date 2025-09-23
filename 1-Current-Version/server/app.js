@@ -272,7 +272,9 @@ class WebSocketReceiver {
       frame[1] = (maskingBit | CONSTANTS.LARGE_DATA_FLAG)
       frame.writeBigInt64BE(BigInt(payloadLength), CONSTANTS.MIN_FRAME_SIZE)
     }
-
+    
+    const messageStartOffset = CONSTANTS.MIN_FRAME_SIZE + additionalPayloadSizeIndicator
+    fullMessage.copy(frame, messageStartOffset)
 
   }
 }
