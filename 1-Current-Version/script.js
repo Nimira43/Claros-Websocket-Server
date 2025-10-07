@@ -40,7 +40,9 @@ openWsBtn.addEventListener('click', () => {
     console.log(socket)
     console.log(messageEvent)
 
-    if (messageEvent.data instanceof Blob) {}
+    if (messageEvent.data instanceof Blob) {
+      const reader = new FileReader()
+    }
   }
 
   socket.onclose = (closeEventObject) => {
