@@ -278,5 +278,12 @@ class WebSocketReceiver {
     this.reset()
   }
 
-  reset() {}
+  reset() {
+    this._buffersArray = []
+    this._bufferedBytesLength = 0
+    this._taskLoop = false
+    this._task = GET_INFO
+    this._fin = false
+    this._opcode = null
+  }
 }
