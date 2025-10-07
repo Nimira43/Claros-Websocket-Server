@@ -51,6 +51,8 @@ openWsBtn.addEventListener('click', () => {
         `
         message.placeholder = `(Previous message size: ${msg.length})`
       }
+    } else {
+      console.log('Received non-blob data: ', messageEvent.data)
     }
   }
 
