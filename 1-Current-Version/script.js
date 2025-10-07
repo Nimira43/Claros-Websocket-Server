@@ -36,9 +36,11 @@ openWsBtn.addEventListener('click', () => {
     })
   }
 
-  socket.onmessage = function(message) {
+  socket.onmessage = function(messageEvent) {
     console.log(socket)
-    console.log(message)
+    console.log(messageEvent)
+
+    if (messageEvent.data instanceof Blob) {}
   }
 
   socket.onclose = (closeEventObject) => {
