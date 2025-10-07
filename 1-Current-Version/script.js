@@ -92,7 +92,9 @@ openWsBtn.addEventListener('click', () => {
     if (socket.readyState === 1) {
       let userText = message.value
       socket.send(userText)
-      table.innerHTML += '<li class="sent"><span>SENT:</span>' + userText + '</li>'
+      table.innerHTML += `
+        <li class="sent"><span>SENT:</span> ${userText}</li>
+      `
       message.value = ''
     }
   })
