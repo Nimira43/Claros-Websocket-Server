@@ -285,5 +285,12 @@ class WebSocketReceiver {
     this._task = GET_INFO
     this._fin = false
     this._opcode = null
+    this._masked = false
+    this._initialPayloadSizeIndicator = 0
+    this._framePayloadLength = 0
+    this._totalPayloadLength = 0
+    this._mask = Buffer.alloc(CONSTANTS.MASK_LENGTH)
+    this._framesReceived = 0
+    this._fragments = []
   }
 }
