@@ -242,7 +242,6 @@ class WebSocketReceiver {
         break
       default:
         additionalPayloadSizeIndicator = CONSTANTS.LARGE_SIZE_CONSUMPTION
-        break
     }
 
     const frame = Buffer.alloc(CONSTANTS.MIN_FRAME_SIZE + additionalPayloadSizeIndicator + payloadLength)
@@ -264,7 +263,7 @@ class WebSocketReceiver {
 
     if (payloadLength <= CONSTANTS.SMALL_DATA_SIZE) {
       frame[1] = (maskingBit | payloadLength)
-    } else if (payloadLength > CONSTANTS.SMALL_DATA_SIZE && payloadLength <= CONSTANTS.MEDIUM_DATA_SIZE) {
+    } else if (payloadLength <= CONSTANTS.MEDIUM_DATA_SIZE) {
       frame[1] = (maskingBit | CONSTANTS.MEDIUM_DATA_FLAG)
       frame.writeUInt16BE(payloadLength, CONSTANTS.MIN_FRAME_SIZE)
     } else {
@@ -276,7 +275,8 @@ class WebSocketReceiver {
     fullMessage.copy(frame, messageStartOffset)
 
     this._socket.write(frame)
-    this._taskLoop = false
-    this._task = GET_INFO
+    this.reset()
   }
+
+  reset() {}
 }
