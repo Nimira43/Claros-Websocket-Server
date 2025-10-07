@@ -42,6 +42,8 @@ openWsBtn.addEventListener('click', () => {
 
     if (messageEvent.data instanceof Blob) {
       const reader = new FileReader()
+
+      reader.readAsText(messageEvent.data)
     }
   }
 
