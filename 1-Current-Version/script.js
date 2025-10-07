@@ -45,7 +45,11 @@ openWsBtn.addEventListener('click', () => {
 
       reader.readAsText(messageEvent.data)
       reader.onload = function(e) {
-        
+        const msg = e.target.result
+        table.innerHTML += `
+          <li><span>Received: </span> ${msg}</li>
+        `
+        message.placeholder = `(Previous message size: ${msg.length})`
       }
     }
   }
