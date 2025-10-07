@@ -49,7 +49,6 @@ function startWebSocketConnection(socket) {
   const receiver = new WebSocketReceiver(socket)
 
   socket.on('data', (chunk) => {
-    console.log('Chunk received.')
     receiver.processBuffer(chunk)
   })
   socket.on('end', () => {
@@ -183,9 +182,9 @@ class WebSocketReceiver {
     }
     this._framesReceived++
 
-    let full_masked_payload_buffer = this._consumePayload(this._framePayloadLength)
+    let frame_masked_payload_buffer = this._consumePayload(this._framePayloadLength)
 
-    let full_unmasked_payload_buffer = FUNCTIONS._unmaskPayload(full_masked_payload_buffer, this._mask)
+    let frame_unmasked_payload_buffer = FUNCTIONS._unmaskPayload(frame_masked_payload_buffer, this._mask)
 
     if (this._opcode === CONSTANTS.OPCODE_CLOSE) {
       throw new Error('Server has not yet dealt with a closure frame.')
@@ -195,8 +194,8 @@ class WebSocketReceiver {
       throw new Error('Server has not yet dealt with this type of frame.')
     }
 
-    if (full_unmasked_payload_buffer.length) {
-      this._fragments.push(full_unmasked_payload_buffer)
+    if (frame_unmasked_payload_buffer.length) {
+      this._fragments.push(frame_unmasked_payload_buffer)
     }
 
     if (!this._fin) {
