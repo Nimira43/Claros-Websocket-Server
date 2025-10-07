@@ -44,6 +44,9 @@ openWsBtn.addEventListener('click', () => {
       const reader = new FileReader()
 
       reader.readAsText(messageEvent.data)
+      reader.onload = function(e) {
+        
+      }
     }
   }
 
