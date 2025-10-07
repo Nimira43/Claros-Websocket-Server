@@ -37,7 +37,8 @@ openWsBtn.addEventListener('click', () => {
   }
 
   socket.onmessage = function(message) {
-    
+    console.log(socket)
+    console.log(message)
   }
 
   socket.onclose = (closeEventObject) => {
