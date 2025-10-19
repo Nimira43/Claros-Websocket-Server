@@ -128,6 +128,7 @@ class WebSocketReceiver {
 
     if (!this._masked) {
       // throw new Error ('Mask is not set by the Client.')
+      this._sendClose(1002, 'Mask must be set.')
     }
 
     this._task = GET_LENGTH
