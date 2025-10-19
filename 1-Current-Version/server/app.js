@@ -305,6 +305,11 @@ class WebSocketReceiver {
       this._sendClose(1008, 'Next time please set the status code')
       return
     }
+
+    let closeCode = closeFramePayload.readUInt16BE()
+    let closeReason = closeFramePayload.toString('utf8', 2)
+
+
   }
 
   _sendClose(closeCode, closeReason) {}
