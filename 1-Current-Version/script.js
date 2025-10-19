@@ -67,7 +67,16 @@ openWsBtn.addEventListener('click', () => {
         socketStatus.innerHTML = 'Issue with Websocket Connection'
         break
       case 1001: // peer closes connection
-        socketStatus.innerHTML = `Disconnected: ${closeEventObject.reason}`
+        socketStatus.innerHTML = `Disconnected reason: ${closeEventObject.reason}`
+        table.innerHTML = ''
+        break
+      case 1002: // peer doesn't adhere to protocol spec
+        socketStatus.innerHTML = `Disconnected reason: ${closeEventObject.reason}`
+        table.innerHTML = ''
+        serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
+        break
+      case 1003: // peer closes connection
+        socketStatus.innerHTML = `Disconnected reason: ${closeEventObject.reason}`
         table.innerHTML = ''
         break
       default:
