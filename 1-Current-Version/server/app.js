@@ -314,8 +314,9 @@ class WebSocketReceiver {
       this._reset()
       return
     }
-
-
+    console.log(`Received close frame with code: ${closeCode} and reason: ${closeReason}`)
+    let serverResponse = 'Goodbye. Please open up a new connection.'
+    this._sendClose(closeCode, serverResponse)
   }
 
   _sendClose(closeCode, closeReason) {}
