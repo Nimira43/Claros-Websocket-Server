@@ -84,6 +84,12 @@ openWsBtn.addEventListener('click', () => {
         socketStatus.innerHTML = `You violated server policy`
         serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
         break
+      case 1009: 
+        socketStatus.innerHTML = `Data too long.`
+        table.innerHTML = ''
+        serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
+        break
+      
       
       default:
         socketStatus.innerHTML = `You have disconnected`
