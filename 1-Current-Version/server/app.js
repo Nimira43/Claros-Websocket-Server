@@ -309,6 +309,12 @@ class WebSocketReceiver {
     let closeCode = closeFramePayload.readUInt16BE()
     let closeReason = closeFramePayload.toString('utf8', 2)
 
+    if (closeCode === 1001) {
+      this._socket.end()
+      this._reset()
+      return
+    }
+
 
   }
 
