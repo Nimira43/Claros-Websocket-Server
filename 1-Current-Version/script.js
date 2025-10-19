@@ -1,8 +1,8 @@
 let openWsBtn = document.getElementById('open-ws')
 let closeWsBtn = document.getElementById('close-ws')
 let populateBtn = document.getElementById('populate')
-
 let form = document.getElementById('form')
+let serverResponse = document.getElementById('server-response')
 let socketStatus = document.getElementById('status')
 let table = document.getElementsByTagName('ul')[0]
 let message = document.getElementById('message')
@@ -25,6 +25,7 @@ openWsBtn.addEventListener('click', () => {
     console.log("SOCKET CONNECTING STATUS IS: " + socket.readyState)
 
     table.innerHTML = ''
+    serverResponse.innerHTML = ''
 
     console.log("SOCKET CONNECTING STATUS IS: " + socket.readyState)
 
