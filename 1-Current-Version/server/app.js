@@ -322,7 +322,7 @@ class WebSocketReceiver {
   _sendClose(closeCode, closeReason) {
     let closureCode = (typeof closeCode !== 'undefined' && closeCode) ? closeCode : 1000
     let closureReason = (typeof closeReason !== 'undefined && closeReason') ? closeReason : ''
-    const closureReasonBuffer = Buffer.from(closq, 'utf8')
+    const closureReasonBuffer = Buffer.from(closureReason, 'utf8')
     const closureReasonLength = closureReasonBuffer.length
     const closeFramePayload = Buffer.alloc(2 + closureReasonLength)
     closeFramePayload.writeInt16BE(closureCode, 0)
@@ -330,5 +330,9 @@ class WebSocketReceiver {
     const firstByte = 0b10000000 | 0b00000000 | 0b00001000
     const secondByte = closeFramePayload.length
     const mantatoryCloseHeaders = Buffer.from([firstByte, secondByte])
+    const closeFrame = Buffer.concat([mantatoryCloseHeaders, closeFramePayload])
+    this._socket.write(closeFrame)
+    this._socket.end()
+    this._reset()
   }
 }
