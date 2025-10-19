@@ -324,5 +324,8 @@ class WebSocketReceiver {
     let closureReason = (typeof closeReason !== 'undefined && closeReason') ? closeReason : ''
     const closureReasonBuffer = Buffer.from(closq, 'utf8')
     const closureReasonLength = closureReasonBuffer.length
+    const closeFramePayload = Buffer.alloc(2 + closureReasonLength)
+    closeFramePayload.writeInt16BE(closureCode, 0)
+    closureReasonBuffer.copy(closeFramePayload, 2)
   }
 }
