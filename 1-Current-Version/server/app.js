@@ -302,7 +302,8 @@ class WebSocketReceiver {
     let closeFramePayload = this._fragments[0]
     
     if (!closeFramePayload) {
-      this._sendClose()
+      this._sendClose(1008, 'Next time please set the status code')
+      return
     }
   }
 
