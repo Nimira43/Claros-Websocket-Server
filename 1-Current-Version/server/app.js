@@ -319,5 +319,9 @@ class WebSocketReceiver {
     this._sendClose(closeCode, serverResponse)
   }
 
-  _sendClose(closeCode, closeReason) {}
+  _sendClose(closeCode, closeReason) {
+    let closureCode = (typeof closeCode !== 'undefined' && closeCode) ? closeCode : 1000
+    let closureReason = (typeof closeReason !== 'undefined && closeReason') ? closeReason : ''
+    
+  }
 }
