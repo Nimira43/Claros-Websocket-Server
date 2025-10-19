@@ -200,7 +200,8 @@ class WebSocketReceiver {
     }
 
     if (this._opcode === CONSTANTS.OPCODE_CLOSE) {
-      throw new Error('Server has not yet dealt with a closure frame.')
+      this._task = GET_CLOSE_INFO
+      return
     }
 
     if ([CONSTANTS.OPCODE_BINARY, CONSTANTS.OPCODE_PING, CONSTANTS.OPCODE_PONG].includes(this._opcode)) {
