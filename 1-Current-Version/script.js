@@ -63,9 +63,6 @@ openWsBtn.addEventListener('click', () => {
     socketStatus.className = 'closed'
     table.innerHTML = ''
     switch (closeEventObject.code) {
-      case 1006: // network issue
-        socketStatus.innerHTML = 'Issue with Websocket Connection'
-        break
       case 1001: // peer closes connection
         socketStatus.innerHTML = `Disconnected reason: ${closeEventObject.reason}`
         table.innerHTML = ''
@@ -80,6 +77,14 @@ openWsBtn.addEventListener('click', () => {
         table.innerHTML = ''
         serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
         break
+      case 1006: // network issue
+        socketStatus.innerHTML = 'Issue with Websocket Connection'
+        break
+      case 1008: 
+        socketStatus.innerHTML = `You violated server policy`
+        serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
+        break
+      
       default:
         socketStatus.innerHTML = `You have disconnected`
     }
