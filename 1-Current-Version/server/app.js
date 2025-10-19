@@ -174,7 +174,7 @@ class WebSocketReceiver {
   _processLength() {
     this._totalPayloadLength += this._framePayloadLength
     if (this._totalPayloadLength > this._maxPayload ) {
-      throw new Error('Data is too large.')
+      this._sendClose(1009, 'The Websocket server does not support such huge message lengths.')
     }
     this._task = GET_MASK_KEY
   }
