@@ -209,7 +209,6 @@ class WebSocketReceiver {
       return
     }
 
-
     if (!this._fin) {
       this._task = GET_INFO
     } else {
@@ -329,7 +328,7 @@ class WebSocketReceiver {
 
   _sendClose(closeCode, closeReason) {
     let closureCode = (typeof closeCode !== 'undefined' && closeCode) ? closeCode : 1000
-    let closureReason = (typeof closeReason !== 'undefined && closeReason') ? closeReason : ''
+    let closureReason = (typeof closeReason !== 'undefined' && closeReason) ? closeReason : ''
     const closureReasonBuffer = Buffer.from(closureReason, 'utf8')
     const closureReasonLength = closureReasonBuffer.length
     const closeFramePayload = Buffer.alloc(2 + closureReasonLength)
