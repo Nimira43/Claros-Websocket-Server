@@ -75,9 +75,10 @@ openWsBtn.addEventListener('click', () => {
         table.innerHTML = ''
         serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
         break
-      case 1003: // peer closes connection
-        socketStatus.innerHTML = `Disconnected reason: ${closeEventObject.reason}`
+      case 1003: 
+        socketStatus.innerHTML = `Unsupported data type.`
         table.innerHTML = ''
+        serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
         break
       default:
         socketStatus.innerHTML = `You have disconnected`
