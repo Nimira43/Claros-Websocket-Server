@@ -195,6 +195,10 @@ class WebSocketReceiver {
 
     let frame_unmasked_payload_buffer = FUNCTIONS._unmaskPayload(frame_masked_payload_buffer, this._mask)
 
+    if (frame_unmasked_payload_buffer.length) {
+      this._fragments.push(frame_unmasked_payload_buffer)
+    }
+
     if (this._opcode === CONSTANTS.OPCODE_CLOSE) {
       throw new Error('Server has not yet dealt with a closure frame.')
     }
