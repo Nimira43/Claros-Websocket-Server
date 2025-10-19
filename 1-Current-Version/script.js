@@ -88,11 +88,10 @@ openWsBtn.addEventListener('click', () => {
         socketStatus.innerHTML = `Data too long.`
         table.innerHTML = ''
         serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`
-        break
-      
-      
+        break      
       default:
         socketStatus.innerHTML = `You have disconnected`
+        serverResponse.innerHTML = `The server responded: ${closeEventObject.reason}`  
     }
     form.classList.remove('show')
     message.setAttribute('required', 'true')
