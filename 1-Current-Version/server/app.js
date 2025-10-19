@@ -204,13 +204,11 @@ class WebSocketReceiver {
       return
     }
 
-    if ([CONSTANTS.OPCODE_BINARY, CONSTANTS.OPCODE_PING, CONSTANTS.OPCODE_PONG].includes(this._opcode)) {
-      throw new Error('Server has not yet dealt with this type of frame.')
+    if (this._framePayloadLength <= 0) {
+      this._sendClose(1008, 'The text area cannot be empty.')
+      return
     }
 
-    if (frame_unmasked_payload_buffer.length) {
-      this._fragments.push(frame_unmasked_payload_buffer)
-    }
 
     if (!this._fin) {
       this._task = GET_INFO
