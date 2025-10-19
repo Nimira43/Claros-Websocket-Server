@@ -127,7 +127,7 @@ class WebSocketReceiver {
     this._initialPayloadSizeIndicator = secondByte & 0b01111111
 
     if (!this._masked) {
-      throw new Error ('Mask is not set by the Client.')
+      // throw new Error ('Mask is not set by the Client.')
     }
 
     this._task = GET_LENGTH
@@ -279,10 +279,10 @@ class WebSocketReceiver {
     fullMessage.copy(frame, messageStartOffset)
 
     this._socket.write(frame)
-    this.reset()
+    this._reset()
   }
 
-  reset() {
+  _reset() {
     this._buffersArray = []
     this._bufferedBytesLength = 0
     this._taskLoop = false
@@ -297,4 +297,14 @@ class WebSocketReceiver {
     this._framesReceived = 0
     this._fragments = []
   }
+
+  _getCloseInfo() {
+    let closeFramePayload = this._fragments[0]
+    
+    if (!closeFramePayload) {
+      this._sendClose()
+    }
+  }
+
+  _sendClose(closeCode, closeReason) {}
 }
