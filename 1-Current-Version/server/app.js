@@ -7,6 +7,7 @@ const GET_LENGTH = 2
 const GET_MASK_KEY = 3
 const GET_PAYLOAD = 4
 const SEND_ECHO = 5 
+const GET_CLOSE_INFO = 6
 
 const HTTP_SERVER = HTTP.createServer((req, res) => {
   res.writeHead(200)
@@ -102,6 +103,9 @@ class WebSocketReceiver {
           break
         case SEND_ECHO:
           this._sendEcho()
+          break
+        case GET_CLOSE_INFO:
+          this._getCloseInfo()
           break
       }
     } while (this._taskLoop)
