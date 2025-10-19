@@ -327,5 +327,8 @@ class WebSocketReceiver {
     const closeFramePayload = Buffer.alloc(2 + closureReasonLength)
     closeFramePayload.writeInt16BE(closureCode, 0)
     closureReasonBuffer.copy(closeFramePayload, 2)
+    const firstByte = 0b10000000 | 0b00000000 | 0b00001000
+    const secondByte = closeFramePayload.length
+    const mantatoryCloseHeaders = Buffer.from([firstByte, secondByte])
   }
 }
