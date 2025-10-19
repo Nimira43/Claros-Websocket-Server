@@ -131,6 +131,10 @@ class WebSocketReceiver {
       this._sendClose(1002, 'Mask must be set.')
     }
 
+    if ([CONSTANTS.OPCODE_PING, CONSTANTS.OPCODE_PONG].includes(this._opcode)) {
+      this._sendClose(1003, 'The server does not accept ping or pong frames.')
+    }
+
     this._task = GET_LENGTH
   }
 
